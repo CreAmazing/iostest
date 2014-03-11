@@ -44,11 +44,12 @@
 		if( !success)
 			NSLog(@"No success loading the tracking configuration");
 	}
-	
-	metaio::Vector3d scale = metaio::Vector3d(11);
+    //metaio::Vector3d scale = metaio::Vector3d(11);
 //	metaio::Rotation rotation = metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0));
 
     // load content
+    
+/*
     NSString* earthModel = [[NSBundle mainBundle] pathForResource:@"guizi" ofType:@"zip" inDirectory:@"Assets"];
     
 	if(earthModel)
@@ -68,6 +69,8 @@
             NSLog(@"error, could not load %@", earthModel);            
         }
     }
+ 
+ */
  /*
     // load content
     NSString* earthOcclusionModel = [[NSBundle mainBundle] pathForResource:@"Earth_Occlusion" ofType:@"zip" inDirectory:@"Assets"];
@@ -204,7 +207,10 @@
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     try {
-        [m_gestureHandler touchesBegan:touches withEvent:event withView:glView];
+        if (m_gestureHandler.getAllObjects.size() > 0) {
+            [m_gestureHandler touchesBegan:touches withEvent:event withView:glView];
+        }
+        
     } catch (NSException *e) {
         NSLog(@"Exception at begin %@",e);
     }
@@ -214,7 +220,10 @@
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     try {
-        [m_gestureHandler touchesMoved:touches withEvent:event withView:glView];
+        if (m_gestureHandler.getAllObjects.size() > 0) {
+            [m_gestureHandler touchesMoved:touches withEvent:event withView:glView];
+        }
+        
     } catch (NSException *e) {
         NSLog(@"Exception at moved %@", e);
     }
@@ -223,7 +232,10 @@
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     try {
-        [m_gestureHandler touchesEnded:touches withEvent:event withView:glView];
+        if (m_gestureHandler.getAllObjects.size()>0) {
+            [m_gestureHandler touchesEnded:touches withEvent:event withView:glView];
+        }
+        
     } catch (NSException *e) {
         NSLog(@"Exception at ended %@", e);
     }
@@ -276,7 +288,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(25));
+            g->setScale(metaio::Vector3d(28));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
           //  std::vector<metaio:: IGeometry*> vector = m_metaioSDK->getLoadedGeometries();
@@ -351,7 +363,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(70));
+            g->setScale(metaio::Vector3d(60));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             g->setRotation(metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0)));
         }
@@ -375,7 +387,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(25));
+            g->setScale(metaio::Vector3d(23));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -399,7 +411,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(25));
+            g->setScale(metaio::Vector3d(23));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -471,7 +483,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(33));
+            g->setScale(metaio::Vector3d(34));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -508,15 +520,18 @@
 
 - (IBAction)deleteAll:(id)sender {
     std::vector<metaio:: IGeometry*> vector = m_metaioSDK->getLoadedGeometries();
-    
-    for (std::vector<metaio::IGeometry*>::iterator modelItl = vector.begin(); modelItl != vector.end(); ++modelItl) {
-        metaio::IGeometry* model = *modelItl;
-        if (model) {
-            m_metaioSDK->unloadGeometry(model);
-            //model->setVisible(false);
+    if (!vector.empty()) {
+        for (std::vector<metaio::IGeometry*>::iterator modelItl = vector.begin(); modelItl != vector.end(); ++modelItl) {
+            metaio::IGeometry* model = *modelItl;
+            if (model) {
+                m_metaioSDK->unloadGeometry(model);
+                //model->setVisible(false);
+            }
         }
     }
-   // gesture_id = 0;
+    //非常关键不然会出错；
+    m_gestureHandler.releaseList;
+    gesture_id = 0;
     
    
     

@@ -10,7 +10,7 @@
 @interface Template : MetaioSDKViewController
 {
 
-    metaio::IGeometry* m_earth;			//!< Reference to  the earth model
+   // metaio::IGeometry* m_earth;			//!< Reference to  the earth model
     GestureHandlerIOS* m_gestureHandler;
     int m_gestures;
     int gesture_id;
