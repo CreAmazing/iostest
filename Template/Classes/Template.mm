@@ -203,16 +203,31 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [m_gestureHandler touchesBegan:touches withEvent:event withView:glView];
+    try {
+        [m_gestureHandler touchesBegan:touches withEvent:event withView:glView];
+    } catch (NSException *e) {
+        NSLog(@"Exception at begin %@",e);
+    }
+    
     
 }
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [m_gestureHandler touchesMoved:touches withEvent:event withView:glView];
+    try {
+        [m_gestureHandler touchesMoved:touches withEvent:event withView:glView];
+    } catch (NSException *e) {
+        NSLog(@"Exception at moved %@", e);
+    }
+    
 }
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [m_gestureHandler touchesEnded:touches withEvent:event withView:glView];
+    try {
+        [m_gestureHandler touchesEnded:touches withEvent:event withView:glView];
+    } catch (NSException *e) {
+        NSLog(@"Exception at ended %@", e);
+    }
+
 }
 #
 -(void) loadModel:(id ) m_name  wtihScale:(float ) scale{
@@ -261,7 +276,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(25));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
           //  std::vector<metaio:: IGeometry*> vector = m_metaioSDK->getLoadedGeometries();
@@ -287,7 +302,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(12));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -311,7 +326,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(35));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -335,7 +350,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(70));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             g->setRotation(metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0)));
         }
@@ -359,7 +374,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(25));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -383,7 +398,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(25));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -407,7 +422,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(20));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -432,7 +447,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(26));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -455,7 +470,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(33));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -478,7 +493,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(5));
+            g->setScale(metaio::Vector3d(20));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
