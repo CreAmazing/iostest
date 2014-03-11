@@ -137,7 +137,7 @@
 		std::vector<metaio::Camera> cameras = m_metaioSDK->getCameraList();
         if(cameras.size()>0)
 		{
-			cameras[0].resolution = metaio::Vector2di(800,600);
+			cameras[0].resolution = metaio::Vector2di(600,450);
             
 			m_metaioSDK->startCamera(cameras[0]);
 		}
