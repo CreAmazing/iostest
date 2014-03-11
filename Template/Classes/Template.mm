@@ -284,6 +284,7 @@
         else
         {
             NSLog(@"error, could not load %@", modelPath);
+            
         }
     }
 
