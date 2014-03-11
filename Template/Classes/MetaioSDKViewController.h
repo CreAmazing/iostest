@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 
 #import <metaioSDK/IMetaioSDKIOS.h>
-
 namespace metaio
 {
     class IMetaioSDKIOS;     // forward declaration

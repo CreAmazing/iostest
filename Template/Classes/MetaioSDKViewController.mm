@@ -138,6 +138,7 @@
         if(cameras.size()>0)
 		{
 			cameras[0].resolution = metaio::Vector2di(480,360);
+            
 			m_metaioSDK->startCamera(cameras[0]);
 		}
     }

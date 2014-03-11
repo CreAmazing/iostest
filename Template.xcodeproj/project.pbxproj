@@ -35,6 +35,10 @@
 		9E7FFE20177C85AF00477DDE /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E7FFE19177C85AF00477DDE /* EAGLView.mm */; };
 		9E7FFE21177C85AF00477DDE /* MetaioSDKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E7FFE1B177C85AF00477DDE /* MetaioSDKViewController.mm */; };
 		9E7FFE22177C85AF00477DDE /* Template.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E7FFE1D177C85AF00477DDE /* Template.mm */; };
+		BAAF434118CDC8FB00809955 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAF433C18CDC8FB00809955 /* FPPopoverController.m */; };
+		BAAF434218CDC8FB00809955 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAF433E18CDC8FB00809955 /* FPPopoverView.m */; };
+		BAAF434318CDC8FB00809955 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAF434018CDC8FB00809955 /* FPTouchView.m */; };
+		BAAF434618CDC91300809955 /* DemoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAF434518CDC91300809955 /* DemoTableController.m */; };
 		FE1DCA7518B506F700E121F4 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DCA7218B506F700E121F4 /* Icon-ipad.png */; };
 		FE1DCA7618B506F700E121F4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DCA7318B506F700E121F4 /* Icon.png */; };
 		FE1DCA7718B506F700E121F4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE1DCA7418B506F700E121F4 /* Icon@2x.png */; };
@@ -83,6 +87,15 @@
 		9E7FFE1B177C85AF00477DDE /* MetaioSDKViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetaioSDKViewController.mm; sourceTree = "<group>"; };
 		9E7FFE1C177C85AF00477DDE /* Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
 		9E7FFE1D177C85AF00477DDE /* Template.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Template.mm; sourceTree = "<group>"; };
+		BAAF433A18CDC8FB00809955 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARCMacros.h; path = FPPopover/ARCMacros.h; sourceTree = SOURCE_ROOT; };
+		BAAF433B18CDC8FB00809955 /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPPopoverController.h; path = FPPopover/FPPopoverController.h; sourceTree = SOURCE_ROOT; };
+		BAAF433C18CDC8FB00809955 /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPPopoverController.m; path = FPPopover/FPPopoverController.m; sourceTree = SOURCE_ROOT; };
+		BAAF433D18CDC8FB00809955 /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPPopoverView.h; path = FPPopover/FPPopoverView.h; sourceTree = SOURCE_ROOT; };
+		BAAF433E18CDC8FB00809955 /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPPopoverView.m; path = FPPopover/FPPopoverView.m; sourceTree = SOURCE_ROOT; };
+		BAAF433F18CDC8FB00809955 /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPTouchView.h; path = FPPopover/FPTouchView.h; sourceTree = SOURCE_ROOT; };
+		BAAF434018CDC8FB00809955 /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPTouchView.m; path = FPPopover/FPTouchView.m; sourceTree = SOURCE_ROOT; };
+		BAAF434418CDC91300809955 /* DemoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoTableController.h; path = FPPopover/FPPopoverDemo/DemoTableController.h; sourceTree = SOURCE_ROOT; };
+		BAAF434518CDC91300809955 /* DemoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoTableController.m; path = FPPopover/FPPopoverDemo/DemoTableController.m; sourceTree = SOURCE_ROOT; };
 		FE1DCA7218B506F700E121F4 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
 		FE1DCA7318B506F700E121F4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FE1DCA7418B506F700E121F4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -189,6 +202,7 @@
 		9E7FFDFD177C856600477DDE /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				BAAF433918CDC8C800809955 /* Popover */,
 				9E7FFE06177C856600477DDE /* AppDelegate.h */,
 				9E7FFE07177C856600477DDE /* AppDelegate.mm */,
 				9E7FFE14177C85AF00477DDE /* Classes */,
@@ -221,6 +235,22 @@
 				9E6C932A177C87220048052B /* Template.xib */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		BAAF433918CDC8C800809955 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				BAAF434418CDC91300809955 /* DemoTableController.h */,
+				BAAF434518CDC91300809955 /* DemoTableController.m */,
+				BAAF433A18CDC8FB00809955 /* ARCMacros.h */,
+				BAAF433B18CDC8FB00809955 /* FPPopoverController.h */,
+				BAAF433C18CDC8FB00809955 /* FPPopoverController.m */,
+				BAAF433D18CDC8FB00809955 /* FPPopoverView.h */,
+				BAAF433E18CDC8FB00809955 /* FPPopoverView.m */,
+				BAAF433F18CDC8FB00809955 /* FPTouchView.h */,
+				BAAF434018CDC8FB00809955 /* FPTouchView.m */,
+			);
+			name = Popover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +336,11 @@
 			files = (
 				9E7FFE04177C856600477DDE /* main.m in Sources */,
 				9E7FFE08177C856600477DDE /* AppDelegate.mm in Sources */,
+				BAAF434218CDC8FB00809955 /* FPPopoverView.m in Sources */,
 				9E7FFE20177C85AF00477DDE /* EAGLView.mm in Sources */,
+				BAAF434318CDC8FB00809955 /* FPTouchView.m in Sources */,
+				BAAF434118CDC8FB00809955 /* FPPopoverController.m in Sources */,
+				BAAF434618CDC91300809955 /* DemoTableController.m in Sources */,
 				9E7FFE21177C85AF00477DDE /* MetaioSDKViewController.mm in Sources */,
 				9E7FFE22177C85AF00477DDE /* Template.mm in Sources */,
 			);
