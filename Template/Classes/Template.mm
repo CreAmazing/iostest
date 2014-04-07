@@ -44,6 +44,26 @@
 		if( !success)
 			NSLog(@"No success loading the tracking configuration");
 	}
+    
+    //load env_map
+	NSString* mapPath = [[NSBundle mainBundle] pathForResource: @"env_map"
+														ofType:@"zip"
+												   inDirectory:@"Assets"];
+    
+	if (mapPath)
+	{
+		Boolean loaded = m_metaioSDK->loadEnvironmentMap([mapPath UTF8String]);
+		NSLog(@"The environment maps have been loaded: %d", (int)loaded);
+        
+	}
+	else
+	{
+		NSLog(@"Error: The filepath for the environment maps is invalid");
+	}
+
+    
+    
+    
     //metaio::Vector3d scale = metaio::Vector3d(11);
 //	metaio::Rotation rotation = metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0));
 
@@ -450,7 +470,7 @@
 
 - (IBAction)onClick8:(id)sender {
     
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"guizi" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yigui" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -533,7 +553,34 @@
     m_gestureHandler.releaseList;
     gesture_id = 0;
     
+    
+    
+    
    
+    
+}
+
+- (IBAction)onClick11:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yigui2" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(26));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
     
 }
 

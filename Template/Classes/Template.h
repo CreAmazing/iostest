@@ -35,6 +35,7 @@
 - (IBAction)onClick9:(id)sender;
 - (IBAction)onClick10:(id)sender;
 - (IBAction)deleteAll:(id)sender;
+- (IBAction)onClick11:(id)sender;
 
 @end
 
