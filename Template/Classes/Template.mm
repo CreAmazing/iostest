@@ -22,11 +22,12 @@
 {
     [super viewDidLoad];
     
+    
+    Scale = 2.2/36.5*25;
     gesture_id = 0;
     m_gestures = 3<<0; //enables all gestures
     m_gestureHandler = [[GestureHandlerIOS alloc] initWithSDK:m_metaioSDK withView:glView withGestures:m_gestures];
     modelList = [[NSMutableArray alloc] init];
-    
     
     
     if( !m_metaioSDK )
@@ -296,8 +297,7 @@
    // [self loadModel:@"shafa" wtihScale:(float) 5];
      
     
-    
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"shafa" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"c050254" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -308,7 +308,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(28));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
           //  std::vector<metaio:: IGeometry*> vector = m_metaioSDK->getLoadedGeometries();
@@ -325,7 +325,7 @@
 }
 
 - (IBAction)onClick2:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"shugui" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"c050255" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -335,7 +335,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(12));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -349,7 +349,7 @@
 }
 
 - (IBAction)onClick3:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"dengzi" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"c050258" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -359,7 +359,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(35));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -373,7 +373,7 @@
 }
 
 - (IBAction)onClick4:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"tv" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"c060263" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -383,9 +383,9 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(60));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
-            g->setRotation(metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0)));
+            //g->setRotation(metaio::Rotation(metaio::Vector3d(M_PI_2, 0.0, 0.0)));
         }
         else
         {
@@ -397,7 +397,7 @@
 }
 
 - (IBAction)onClick5:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"chuang" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"c060264" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -407,7 +407,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(23));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -421,7 +421,7 @@
 }
 
 - (IBAction)onClick6:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"chuangtougui" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"ctg" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -431,7 +431,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(23));
+            g->setScale(metaio::Vector3d(1.1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -445,7 +445,7 @@
 }
 
 - (IBAction)onClick7:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yigui" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"ctg050253" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -455,7 +455,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(20));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -470,7 +470,7 @@
 
 - (IBAction)onClick8:(id)sender {
     
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yigui" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"dsjg" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -480,7 +480,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(26));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -493,7 +493,7 @@
 }
 
 - (IBAction)onClick9:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"zuozi" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"jg050950" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -503,7 +503,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(34));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -516,7 +516,7 @@
 }
 
 - (IBAction)onClick10:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"chaji" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"sfA196" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -526,7 +526,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(20));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -561,7 +561,7 @@
 }
 
 - (IBAction)onClick11:(id)sender {
-    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yigui2" ofType:@"zip" inDirectory:@"Assets"];
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"szg060368" ofType:@"zip" inDirectory:@"Assets"];
     if(modelPath)
 	{
 		// if this call was successful, m_earth will contain a pointer to the 3D model
@@ -571,7 +571,7 @@
         {
             
             // scale it a bit down
-            g->setScale(metaio::Vector3d(26));
+            g->setScale(metaio::Vector3d(1*Scale));
             [m_gestureHandler addObject:g andGroup:gesture_id++];
             //			m_earth->setRotation(rotation);
         }
@@ -582,6 +582,240 @@
     }
 
     
+}
+
+- (IBAction)onClick12:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"sg051150" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+    
+    
+
+}
+
+- (IBAction)onClick13:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"sg051250" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+    
+    
+
+}
+
+- (IBAction)onClick14:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg050154" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick15:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg050155" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick16:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg050156" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick17:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg050157" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick18:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg060168" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick19:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg050159" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick20:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg060164" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
+}
+
+- (IBAction)onClick21:(id)sender {
+    NSString* modelPath = [[NSBundle mainBundle] pathForResource:@"yg060165" ofType:@"zip" inDirectory:@"Assets"];
+    if(modelPath)
+	{
+		// if this call was successful, m_earth will contain a pointer to the 3D model
+        
+        metaio::IGeometry *g =  m_metaioSDK->createGeometry([modelPath UTF8String]);
+        if( g )
+        {
+            
+            // scale it a bit down
+            g->setScale(metaio::Vector3d(1*Scale));
+            [m_gestureHandler addObject:g andGroup:gesture_id++];
+            //			m_earth->setRotation(rotation);
+        }
+        else
+        {
+            NSLog(@"error, could not load %@", modelPath);
+        }
+    }
+
 }
 
 

@@ -14,6 +14,7 @@
     GestureHandlerIOS* m_gestureHandler;
     int m_gestures;
     int gesture_id;
+    float Scale;
     NSMutableArray *modelList;
     
 //    metaio::IGeometry* m_earthOcclusion;			//!< Reference to  the earth occlusion model
@@ -36,6 +37,17 @@
 - (IBAction)onClick10:(id)sender;
 - (IBAction)deleteAll:(id)sender;
 - (IBAction)onClick11:(id)sender;
+- (IBAction)onClick12:(id)sender;
+- (IBAction)onClick13:(id)sender;
+- (IBAction)onClick14:(id)sender;
+- (IBAction)onClick15:(id)sender;
+- (IBAction)onClick16:(id)sender;
+- (IBAction)onClick17:(id)sender;
+- (IBAction)onClick18:(id)sender;
+- (IBAction)onClick19:(id)sender;
+- (IBAction)onClick20:(id)sender;
+- (IBAction)onClick21:(id)sender;
+
 
 @end
 
